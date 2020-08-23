@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189C858224F2068500F8123F /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189C858024F2068500F8123F /* CommentCell.swift */; };
+		189C858324F2068500F8123F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189C858124F2068500F8123F /* CommentCell.xib */; };
+		189C858624F20D4E00F8123F /* ShowMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189C858424F20D4E00F8123F /* ShowMoreCell.swift */; };
+		189C858724F20D4E00F8123F /* ShowMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189C858524F20D4E00F8123F /* ShowMoreCell.xib */; };
 		C723D09824EF6B8300A954C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723D09724EF6B8300A954C7 /* AppDelegate.swift */; };
 		C723D09A24EF6B8300A954C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723D09924EF6B8300A954C7 /* SceneDelegate.swift */; };
 		C723D09C24EF6B8300A954C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723D09B24EF6B8300A954C7 /* ViewController.swift */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		189C858024F2068500F8123F /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		189C858124F2068500F8123F /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		189C858424F20D4E00F8123F /* ShowMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreCell.swift; sourceTree = "<group>"; };
+		189C858524F20D4E00F8123F /* ShowMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowMoreCell.xib; sourceTree = "<group>"; };
 		C723D09424EF6B8300A954C7 /* NewFeedUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewFeedUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C723D09724EF6B8300A954C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C723D09924EF6B8300A954C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,9 +116,13 @@
 				C723D09724EF6B8300A954C7 /* AppDelegate.swift */,
 				C723D09924EF6B8300A954C7 /* SceneDelegate.swift */,
 				C723D09B24EF6B8300A954C7 /* ViewController.swift */,
-				C723D0D124EF9C2400A954C7 /* StatusCell.swift */,
 				C723D0D924EFD11D00A954C7 /* PostDetailViewController.swift */,
+				C723D0D124EF9C2400A954C7 /* StatusCell.swift */,
+				189C858024F2068500F8123F /* CommentCell.swift */,
+				189C858424F20D4E00F8123F /* ShowMoreCell.swift */,
+				189C858124F2068500F8123F /* CommentCell.xib */,
 				C723D0D224EF9C2400A954C7 /* StatusCell.xib */,
+				189C858524F20D4E00F8123F /* ShowMoreCell.xib */,
 				C723D09D24EF6B8300A954C7 /* Main.storyboard */,
 				C723D0A024EF6B8500A954C7 /* Assets.xcassets */,
 				C723D0A224EF6B8500A954C7 /* LaunchScreen.storyboard */,
@@ -241,8 +253,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189C858324F2068500F8123F /* CommentCell.xib in Resources */,
 				C723D0A424EF6B8500A954C7 /* LaunchScreen.storyboard in Resources */,
 				C723D0A124EF6B8500A954C7 /* Assets.xcassets in Resources */,
+				189C858724F20D4E00F8123F /* ShowMoreCell.xib in Resources */,
 				C723D09F24EF6B8300A954C7 /* Main.storyboard in Resources */,
 				C723D0D424EF9C2400A954C7 /* StatusCell.xib in Resources */,
 			);
@@ -270,10 +284,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C723D09C24EF6B8300A954C7 /* ViewController.swift in Sources */,
+				189C858624F20D4E00F8123F /* ShowMoreCell.swift in Sources */,
 				C723D09824EF6B8300A954C7 /* AppDelegate.swift in Sources */,
 				C723D09A24EF6B8300A954C7 /* SceneDelegate.swift in Sources */,
 				C723D0DA24EFD11D00A954C7 /* PostDetailViewController.swift in Sources */,
 				C723D0D324EF9C2400A954C7 /* StatusCell.swift in Sources */,
+				189C858224F2068500F8123F /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

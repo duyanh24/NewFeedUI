@@ -14,12 +14,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "NewFeed"
         setUp()
     }
     
     func setUp() {
-        
-        //statusTableView.register(StatusCell.self, forCellReuseIdentifier: "statusCell")
         statusTableView.register(UINib(nibName: "StatusCell", bundle: nil), forCellReuseIdentifier: "statusCell")
         statusTableView.dataSource = self
         statusTableView.delegate = self
@@ -33,9 +32,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell  else {
-        //            fatalError("Error")
-        //        }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell else {
             return UITableViewCell()
         }
@@ -48,10 +44,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let postDetailViewController = storyboard?.instantiateViewController(identifier: "PostDetailViewController") as? PostDetailViewController else {
-//            return
-//        }
-        
         guard let postDetailViewController = storyboard?.instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController else {
             return
         }
