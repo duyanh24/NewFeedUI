@@ -22,32 +22,34 @@ class Status {
         self.content = content
         self.liked = liked
     }
-     
-    var listStatus = [
-        Status(name: "duy anh", image: "", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "Rectangle", content: "Hom nay troi dep qua", liked: false),
-        Status(name: "duy anh", image: "Rectangle", avatar: "Rectangle", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "Rectangle", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-        Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true)
-    ]
-
+    
+    static func setData() -> [Status] {
+        let listStatus = [
+            Status(name: "duy anh", image: "", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "Rectangle", content: "Hom nay troi dep qua", liked: false),
+            Status(name: "duy anh", image: "Rectangle", avatar: "Rectangle", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "Rectangle", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
+            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true)
+        ]
+        return listStatus
+    }
 }

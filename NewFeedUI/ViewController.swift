@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  NewFeedUI
 //
-//  Created by tuanna on 8/21/20.
+//  Created by Le Duy Anh on 8/21/20.
 //  Copyright © 2020 Le Duy Anh. All rights reserved.
 //
 
