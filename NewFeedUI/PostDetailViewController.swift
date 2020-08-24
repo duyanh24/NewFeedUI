@@ -2,7 +2,7 @@
 //  PostdetailViewController.swift
 //  NewFeedUI
 //
-//  Created by tuanna on 8/21/20.
+//  Created by Le Duy Anh on 8/21/20.
 //  Copyright © 2020 Le Duy Anh. All rights reserved.
 //
 
@@ -10,18 +10,23 @@ import UIKit
 
 class PostDetailViewController: UIViewController {
     
-    var test = 40
+    var numberOfComment = 40
     var showMoreSelected = false
+    var statusSelected: Status?
 
     @IBOutlet weak var postDetailTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Yvonne Knight"
         setUp()
     }
     
     func setUp() {
+        guard let statusSelected = statusSelected else {
+            return
+        }
+        title = statusSelected.name
+        
         postDetailTableView.register(UINib(nibName: "StatusCell", bundle: nil), forCellReuseIdentifier: "statusCell")
         postDetailTableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "commentCell")
         postDetailTableView.register(UINib(nibName: "ShowMoreCell", bundle: nil), forCellReuseIdentifier: "showMoreCell")
@@ -33,10 +38,10 @@ class PostDetailViewController: UIViewController {
 extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if showMoreSelected == false && test > 3 {
+        if showMoreSelected == false && numberOfComment > 3 {
             return 4
         }
-        return test
+        return numberOfComment
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,6 +49,11 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell else {
                 return UITableViewCell()
             }
+            
+            guard let statusSelected = statusSelected else {
+                return UITableViewCell()
+            }
+            cell.setUpData(status: statusSelected)
             return cell
         }
         

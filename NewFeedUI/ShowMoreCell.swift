@@ -2,7 +2,7 @@
 //  ShowMoreCell.swift
 //  NewFeedUI
 //
-//  Created by Apple on 8/23/20.
+//  Created by Le Duy Anh on 8/23/20.
 //  Copyright © 2020 Le Duy Anh. All rights reserved.
 //
 

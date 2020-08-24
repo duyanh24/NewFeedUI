@@ -12,9 +12,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var statusTableView: UITableView!
     
+    var listStatus = Status.setData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "NewFeed"
+        title = "New Feeds"
         setUp()
     }
     
@@ -28,13 +30,14 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return listStatus.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell else {
             return UITableViewCell()
         }
+        cell.setUpData(status: listStatus[indexPath.row])
         
         return cell
     }
@@ -47,6 +50,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         guard let postDetailViewController = storyboard?.instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController else {
             return
         }
+        postDetailViewController.statusSelected = listStatus[indexPath.row]
         navigationController?.pushViewController(postDetailViewController, animated: true)
     }
 }

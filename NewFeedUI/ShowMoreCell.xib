@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOC-wN-w0M">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                        <rect key="frame" x="10" y="0.0" width="300" height="30"/>
                         <color key="backgroundColor" red="0.90579341359187249" green="0.91225184362918366" blue="0.93162713374111683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="VZd-gM-r8Z"/>
@@ -27,11 +27,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.96068006750000001" green="0.96084445709999999" blue="0.96066969629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="OOC-wN-w0M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="T7H-Rw-Tuv"/>
+                    <constraint firstItem="OOC-wN-w0M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="T7H-Rw-Tuv"/>
                     <constraint firstAttribute="bottom" secondItem="OOC-wN-w0M" secondAttribute="bottom" id="pYG-VO-7d4"/>
                     <constraint firstItem="OOC-wN-w0M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sQf-BF-exY"/>
-                    <constraint firstAttribute="trailing" secondItem="OOC-wN-w0M" secondAttribute="trailing" id="zBh-Qk-7Gv"/>
+                    <constraint firstAttribute="trailing" secondItem="OOC-wN-w0M" secondAttribute="trailing" constant="10" id="zBh-Qk-7Gv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
