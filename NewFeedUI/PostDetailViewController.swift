@@ -13,6 +13,7 @@ class PostDetailViewController: UIViewController {
     var numberOfComment = 40
     var showMoreSelected = false
     var statusSelected: Status?
+    var numberOfCellShown = 4
 
     @IBOutlet weak var postDetailTableView: UITableView!
     
@@ -38,8 +39,8 @@ class PostDetailViewController: UIViewController {
 extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if showMoreSelected == false && numberOfComment > 3 {
-            return 4
+        if showMoreSelected == false && numberOfComment > 3 && numberOfCellShown < numberOfComment{
+            return numberOfCellShown
         }
         return numberOfComment
     }
@@ -57,7 +58,7 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         
-        if showMoreSelected == false && indexPath.row == 3 {
+        if numberOfCellShown < numberOfComment && indexPath.row == numberOfCellShown - 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "showMoreCell", for: indexPath) as? ShowMoreCell else {
                 return UITableViewCell()
             }
@@ -71,8 +72,8 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 3 {
-            showMoreSelected = true
+        if indexPath.row == numberOfCellShown - 1 {
+            numberOfCellShown += 5
             postDetailTableView.reloadData()
         }
     }
