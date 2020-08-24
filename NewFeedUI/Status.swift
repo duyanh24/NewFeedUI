@@ -8,48 +8,122 @@
 
 import Foundation
 
+var listAvatar = ["avatar1", "avatar2", "avatar3", "avatar4", "avatar5", "avatar6"]
+var listImg = ["img1", "img2", "img3", "img4", "img5", "", "", "", "", ""]
+var listName: [String] = ["Bùi Kim Quyên", "Võ An Phước Thiện", "Phạm Nguyễn Trân", "Dương Hoài Phương",
+                "Phan Vinh Bính", "Võ Minh Thư", "Phan Huỳnh Dung", "Nguyễn Vân Anh", "Nguyễn Thế Vinh", "Nguyen Thi Bích"]
+var listContent = ["Nam iaculis mi ac tellus viverra, ac semper nunc euismod. Nam eget lacinia augue. Duis tempus eros vitae tortor gravida",
+                "Duis tempus eros vitae tortor gravida, rhoncus tincidunt sapien",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit orci condimentum turpis.",
+                "consectetur adipiscing elit. Phasellus hendrerit",
+                "ac semper nunc euismod. Nam eget lacinia augue. Duis tempus eros vitae",
+                "consectetur adipiscing elit. Phasellus hendrerit orci",
+                "dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit",
+                "Nam eget lacinia augue. Duis tempus eros vitae tortor gra"]
+var listBool = [true, false]
+
 class Status {
+    
+
     var name: String
     var image: String
     var avatar: String
     var content: String
     var liked: Bool
+    var numberOfLike: Int
+    var numberOfComment: Int
+    var numberOfShare: Int
+    var comments: [Comment]
     
-    init(name: String, image: String, avatar: String, content: String, liked: Bool){
+    init(name: String, image: String, avatar: String, content: String, liked: Bool, numberOfLike: Int, numberOfComment: Int, numberOfShare: Int, comments: [Comment]) {
         self.name = name
         self.image = image
         self.avatar = avatar
         self.content = content
         self.liked = liked
+        self.numberOfLike = numberOfLike
+        self.numberOfComment = numberOfComment
+        self.numberOfShare = numberOfShare
+        self.comments = comments
     }
     
     static func setData() -> [Status] {
-        let listStatus = [
-            Status(name: "duy anh", image: "", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "Rectangle", content: "Hom nay troi dep qua", liked: false),
-            Status(name: "duy anh", image: "Rectangle", avatar: "Rectangle", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "Rectangle", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true),
-            Status(name: "duy anh", image: "download", avatar: "download", content: "Hom nay troi dep qua", liked: true)
+        let listComment: [Comment] = [
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
+            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    name: listName[Int.random(in: 0...listName.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
         ]
+        
+        var listStatus: [Status] = [
+            Status(name: listName[Int.random(in: 0...listName.count - 1)],
+            image: listImg[Int.random(in: 0...listImg.count - 1)],
+            avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+            content: listContent[Int.random(in: 0...listContent.count - 1)],
+            liked: listBool[Int.random(in: 0...listBool.count - 1)],
+            numberOfLike: Int.random(in: 1...10),
+            numberOfComment: Int.random(in: 1...10),
+            numberOfShare: Int.random(in: 1...10),
+            comments: listComment)
+        ]
+        
+        for _ in 0...20 {
+            let status = Status(name: listName[Int.random(in: 0...listName.count - 1)],
+                                image: listImg[Int.random(in: 0...listImg.count - 1)],
+                                avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                                content: listContent[Int.random(in: 0...listContent.count - 1)],
+                                liked: listBool[Int.random(in: 0...listBool.count - 1)],
+                                numberOfLike: Int.random(in: 1...10),
+                                numberOfComment: Int.random(in: 1...10),
+                                numberOfShare: Int.random(in: 1...10),
+                                comments: listComment)
+            listStatus.append(status)
+        }
+        
         return listStatus
+    }
+}
+
+class Comment {
+    var avatar: String
+    var name: String
+    var content: String
+    
+    init(avatar: String, name: String, content: String) {
+        self.avatar = avatar
+        self.name = name
+        self.content = content
     }
 }

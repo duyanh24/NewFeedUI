@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="IJp-cj-IC5">
             <objects>
                 <viewController id="GpB-5z-pSh" sceneMemberID="viewController">
@@ -17,11 +17,11 @@
                         <color key="backgroundColor" red="0.95917242765426636" green="0.95930999517440796" blue="0.95914226770401001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="EcD-ug-NlQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="oRQ-nl-mkA"/>
+                    <tabBarItem key="tabBarItem" title="" image="radio" selectedImage="radio" id="oRQ-nl-mkA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kB-xV-D0G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15.942028985507248" y="572.54464285714278"/>
+            <point key="canvasLocation" x="-862" y="572"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WFW-J1-3fC">
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejB-fd-9cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-823.1884057971015" y="571.875"/>
+            <point key="canvasLocation" x="-1733" y="1294"/>
         </scene>
         <!--Post Detail View Controller-->
         <scene sceneID="1sj-W5-QLK">
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENo-X1-qFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1733.3333333333335" y="1239.5089285714284"/>
+            <point key="canvasLocation" x="-861" y="1294"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gfk-OE-lku">
@@ -196,17 +196,22 @@
                     <connections>
                         <segue destination="tZ3-gy-5nh" kind="relationship" relationship="viewControllers" id="sXG-QK-3SA"/>
                         <segue destination="GpB-5z-pSh" kind="relationship" relationship="viewControllers" id="HSf-z9-1wC"/>
+                        <segue destination="3jR-jR-ztw" kind="relationship" relationship="viewControllers" id="FDH-bN-EP9"/>
+                        <segue destination="1e4-E0-bKQ" kind="relationship" relationship="viewControllers" id="lje-Ca-kdt"/>
+                        <segue destination="jar-An-mDw" kind="relationship" relationship="viewControllers" id="N6P-5u-OXL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUK-DD-4UC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148" y="-266"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="Ip6-Xq-B53">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tZ3-gy-5nh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="PZF-3m-lfS"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="PZF-3m-lfS">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eXd-qg-KRK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -221,11 +226,64 @@
             </objects>
             <point key="canvasLocation" x="-1733.3333333333335" y="571.875"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="s7G-2q-w8R">
+            <objects>
+                <viewController id="3jR-jR-ztw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TXy-tr-vNY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.9591724277" green="0.95930999520000004" blue="0.9591422677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="QI0-c8-su7"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="people" id="Xmj-CD-4Ji"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFz-DQ-OPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-41" y="572"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j51-u7-Aov">
+            <objects>
+                <viewController id="1e4-E0-bKQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V6v-am-cif">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.9591724277" green="0.95930999520000004" blue="0.9591422677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="xta-cm-OLG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="bell" id="wmx-7h-R0v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIK-dN-f2l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="572"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1VQ-ai-3cK">
+            <objects>
+                <viewController id="jar-An-mDw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X0u-eN-XiG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.9591724277" green="0.95930999520000004" blue="0.9591422677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="WlL-jy-yhi"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="option" id="17o-j0-R2e"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZy-02-ZHD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="572"/>
+        </scene>
     </scenes>
     <color key="tintColor" red="0.62645412308310489" green="0.62645412308310489" blue="0.62645412308310489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
+        <image name="bell" width="54" height="56"/>
         <image name="camera" width="56" height="55"/>
+        <image name="home" width="56" height="57"/>
         <image name="messenger" width="58" height="57"/>
+        <image name="option" width="58" height="54"/>
+        <image name="people" width="57" height="54"/>
+        <image name="radio" width="66" height="60"/>
         <image name="search" width="50" height="50"/>
     </resources>
 </document>

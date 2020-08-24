@@ -10,8 +10,7 @@ import UIKit
 
 class PostDetailViewController: UIViewController {
     
-    var numberOfComment = 40
-    var showMoreSelected = false
+    var numberOfComment = -1
     var statusSelected: Status?
     var numberOfCellShown = 4
 
@@ -27,6 +26,7 @@ class PostDetailViewController: UIViewController {
             return
         }
         title = statusSelected.name
+        numberOfComment = statusSelected.comments.count
         
         postDetailTableView.register(UINib(nibName: "StatusCell", bundle: nil), forCellReuseIdentifier: "statusCell")
         postDetailTableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "commentCell")
@@ -39,7 +39,7 @@ class PostDetailViewController: UIViewController {
 extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if showMoreSelected == false && numberOfComment > 3 && numberOfCellShown < numberOfComment{
+        if numberOfComment > 3 && numberOfCellShown < numberOfComment{
             return numberOfCellShown
         }
         return numberOfComment
@@ -68,6 +68,10 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as? CommentCell else {
             return UITableViewCell()
         }
+        guard let statusSelected = statusSelected else {
+            return UITableViewCell()
+        }
+        cell.setUpData(comment: statusSelected.comments[indexPath.row])
         return cell
     }
     

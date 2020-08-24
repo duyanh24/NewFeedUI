@@ -12,6 +12,8 @@ class CommentCell: UITableViewCell {
 
     @IBOutlet weak var avatarCommentImage: UIImageView!
     @IBOutlet weak var containerCommentView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,12 @@ class CommentCell: UITableViewCell {
         avatarCommentImage.layer.cornerRadius = avatarCommentImage.frame.size.height / 2
         avatarCommentImage.clipsToBounds = true
         containerCommentView.dropShadow()
+    }
+    
+    func setUpData(comment: Comment) {
+        avatarCommentImage.image = UIImage(named: comment.avatar)
+        nameLabel.text = comment.name
+        commentLabel.text = comment.content
     }
 }
 

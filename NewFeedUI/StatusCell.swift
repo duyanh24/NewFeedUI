@@ -31,10 +31,20 @@ class StatusCell: UITableViewCell {
     var statusLabelWithoutImageContraintBottom: NSLayoutConstraint!
     var statusLabelWithImageContraintBottom: NSLayoutConstraint!
     
-    var idItemSelected = -1
+    var liked = false
     
     @IBAction func likeButtonClick(_ sender: Any) {
-        
+        if liked == true {
+            liked = false
+            likeButton.backgroundColor = UIColor.white
+            likeButton.setTitleColor(UIColor.gray, for: .normal)
+            likeButton.setImage(UIImage(named: "dislike"), for: .normal)
+        } else {
+            liked = true
+            likeButton.backgroundColor = UIColor(red: 66/255.0, green: 103/255.0, blue: 178/255.0, alpha: 1.0)
+            likeButton.setTitleColor(UIColor.white, for: .normal)
+            likeButton.setImage(UIImage(named: "like contour"), for: .normal)
+        }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,6 +76,7 @@ class StatusCell: UITableViewCell {
         nameLabel.text = status.name
         avatarStatusImageView.image = UIImage(named: status.avatar)
         statusLabel.text = status.content
+        numberOfReactLabel.text = String(status.numberOfLike) + " - " + String(status.numberOfComment) + " Comment - " + String(status.numberOfShare) + " Share"
         
         if status.image != "" {
             showImage()
@@ -81,11 +92,14 @@ class StatusCell: UITableViewCell {
         }
         
         if status.liked {
+            liked = true
             likeButton.backgroundColor = UIColor(red: 66/255.0, green: 103/255.0, blue: 178/255.0, alpha: 1.0)
             likeButton.setTitleColor(UIColor.white, for: .normal)
+            likeButton.setImage(UIImage(named: "like contour"), for: .normal)
         } else {
             likeButton.backgroundColor = UIColor.white
             likeButton.setTitleColor(UIColor.gray, for: .normal)
+            likeButton.setImage(UIImage(named: "dislike"), for: .normal)
         }
     }
     

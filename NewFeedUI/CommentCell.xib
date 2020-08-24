@@ -76,7 +76,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarCommentImage" destination="sHG-4N-nmV" id="fQv-Hc-4wp"/>
+                <outlet property="commentLabel" destination="rLh-nf-pdy" id="nLe-Xy-59V"/>
                 <outlet property="containerCommentView" destination="i8E-6b-Swe" id="miz-RM-XOF"/>
+                <outlet property="nameLabel" destination="je7-eV-RZV" id="Ur9-kw-bkz"/>
             </connections>
             <point key="canvasLocation" x="218.84057971014494" y="193.52678571428569"/>
         </tableViewCell>
