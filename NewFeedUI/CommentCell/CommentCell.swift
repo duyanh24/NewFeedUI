@@ -36,16 +36,6 @@ class CommentCell: UITableViewCell {
         nameLabel.text = comment.name
         commentLabel.text = comment.content
     }
-    
-    func setUpContraintLastCell() {
-        bottomContraint.constant = 60
-    }
-    
-    override func prepareForReuse() {
-        if bottomContraint.constant == 60 {
-            bottomContraint.constant = 20
-        }
-    }
 }
 
 extension UIView {

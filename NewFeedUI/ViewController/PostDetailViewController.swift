@@ -31,8 +31,11 @@ class PostDetailViewController: UIViewController {
         postDetailTableView.register(UINib(nibName: "StatusCell", bundle: nil), forCellReuseIdentifier: "statusCell")
         postDetailTableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "commentCell")
         postDetailTableView.register(UINib(nibName: "ShowMoreCell", bundle: nil), forCellReuseIdentifier: "showMoreCell")
+        postDetailTableView.register(UINib(nibName: "StatusCellWithoutImage", bundle: nil), forCellReuseIdentifier: "statusCellWithoutImage")
         postDetailTableView.dataSource = self
         postDetailTableView.delegate = self
+        
+        postDetailTableView.contentInset.bottom = 50
     }
 }
 
@@ -47,13 +50,24 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell else {
-                return UITableViewCell()
-            }
             
             guard let statusSelected = statusSelected else {
                 return UITableViewCell()
             }
+            
+            if statusSelected.image == "" {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCellWithoutImage", for: indexPath) as? StatusCellWithoutImage else {
+                    return UITableViewCell()
+                }
+        
+                cell.setUpData(status: statusSelected)
+                return cell
+            }
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell else {
+                return UITableViewCell()
+            }
+            
             cell.setUpData(status: statusSelected)
             return cell
         }
@@ -72,10 +86,6 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         cell.setUpData(comment: statusSelected.comments[indexPath.row])
-        
-        if indexPath.row == statusSelected.comments.count - 1 {
-            cell.setUpContraintLastCell()
-        }
         
         return cell
     }
