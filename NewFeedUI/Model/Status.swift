@@ -24,7 +24,6 @@ var listBool = [true, false]
 
 class Status {
     
-
     var name: String
     var image: String
     var avatar: String

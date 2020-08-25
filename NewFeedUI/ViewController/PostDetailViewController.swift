@@ -10,18 +10,19 @@ import UIKit
 
 class PostDetailViewController: UIViewController {
     
-    var numberOfComment = -1
-    var statusSelected: Status?
-    var numberOfCellShown = 4
-
     @IBOutlet weak var postDetailTableView: UITableView!
+    
+    private var numberOfComment = -1
+    private var numberOfCellShown = 4
+    var statusSelected: Status?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
+        setUpTableView()
+
     }
     
-    func setUp() {
+    private func setUpTableView() {
         guard let statusSelected = statusSelected else {
             return
         }
@@ -34,7 +35,6 @@ class PostDetailViewController: UIViewController {
         postDetailTableView.register(UINib(nibName: "StatusCellWithoutImage", bundle: nil), forCellReuseIdentifier: "statusCellWithoutImage")
         postDetailTableView.dataSource = self
         postDetailTableView.delegate = self
-        
         postDetailTableView.contentInset.bottom = 50
     }
 }

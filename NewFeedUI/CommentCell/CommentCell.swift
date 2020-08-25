@@ -25,7 +25,7 @@ class CommentCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setUpUI() {
+    private func setUpUI() {
         avatarCommentImage.layer.cornerRadius = avatarCommentImage.frame.size.height / 2
         avatarCommentImage.clipsToBounds = true
         containerCommentView.dropShadow()
@@ -45,7 +45,7 @@ extension UIView {
       layer.shadowColor = UIColor.gray.cgColor
       layer.shadowOpacity = 0.2
       layer.shadowOffset = .zero
-      layer.shadowRadius = 10
+      layer.shadowRadius = 5
       layer.shouldRasterize = true
       layer.rasterizationScale = UIScreen.main.scale
     }

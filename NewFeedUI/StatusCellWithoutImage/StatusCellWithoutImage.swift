@@ -26,27 +26,14 @@ class StatusCellWithoutImage: UITableViewCell {
     @IBOutlet weak var sadReactImage: UIImageView!
     @IBOutlet weak var angryReactImage: UIImageView!
     
-    var liked = false
+    private var liked = false
     
-    @IBAction func likeButtonClick(_ sender: Any) {
-        if liked == true {
-            liked = false
-            likeButton.backgroundColor = UIColor.white
-            likeButton.setTitleColor(UIColor.gray, for: .normal)
-            likeButton.setImage(UIImage(named: "dislike"), for: .normal)
-        } else {
-            liked = true
-            likeButton.backgroundColor = UIColor(red: 66/255.0, green: 103/255.0, blue: 178/255.0, alpha: 1.0)
-            likeButton.setTitleColor(UIColor.white, for: .normal)
-            likeButton.setImage(UIImage(named: "like contour"), for: .normal)
-        }
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUI()
     }
     
-    func setUpUI() {
+    private func setUpUI() {
         
         avatarStatusImageView.layer.cornerRadius = avatarStatusImageView.frame.size.height / 2
         avatarStatusImageView.clipsToBounds = true
@@ -79,6 +66,20 @@ class StatusCellWithoutImage: UITableViewCell {
             likeButton.backgroundColor = UIColor.white
             likeButton.setTitleColor(UIColor.gray, for: .normal)
             likeButton.setImage(UIImage(named: "dislike"), for: .normal)
+        }
+    }
+    
+    @IBAction func likeButtonClick(_ sender: Any) {
+        if liked == true {
+            liked = false
+            likeButton.backgroundColor = UIColor.white
+            likeButton.setTitleColor(UIColor.gray, for: .normal)
+            likeButton.setImage(UIImage(named: "dislike"), for: .normal)
+        } else {
+            liked = true
+            likeButton.backgroundColor = UIColor(red: 66/255.0, green: 103/255.0, blue: 178/255.0, alpha: 1.0)
+            likeButton.setTitleColor(UIColor.white, for: .normal)
+            likeButton.setImage(UIImage(named: "like contour"), for: .normal)
         }
     }
 }

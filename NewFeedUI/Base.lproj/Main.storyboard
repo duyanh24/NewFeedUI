@@ -17,7 +17,7 @@
                         <color key="backgroundColor" red="0.95917242765426636" green="0.95930999517440796" blue="0.95914226770401001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="EcD-ug-NlQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="radio" selectedImage="radio" id="oRQ-nl-mkA"/>
+                    <tabBarItem key="tabBarItem" tag="5" title="" image="radio" selectedImage="radio" id="oRQ-nl-mkA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kB-xV-D0G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +44,8 @@
                                     <constraint firstAttribute="width" constant="40" id="3hC-Kw-kHK"/>
                                     <constraint firstAttribute="height" constant="40" id="yAk-aZ-ySF"/>
                                 </constraints>
-                                <state key="normal" image="messenger"/>
+                                <inset key="imageEdgeInsets" minX="-10" minY="-6" maxX="-10" maxY="-12"/>
+                                <state key="normal" image="messenger-1"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="20"/>
@@ -58,7 +59,8 @@
                                     <constraint firstAttribute="height" constant="40" id="1r2-e2-lvP"/>
                                     <constraint firstAttribute="width" constant="40" id="miW-xt-Len"/>
                                 </constraints>
-                                <state key="normal" image="camera2"/>
+                                <inset key="imageEdgeInsets" minX="-12" minY="-9" maxX="-13" maxY="-16"/>
+                                <state key="normal" image="camera"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="20"/>
@@ -72,7 +74,8 @@
                                     <constraint firstAttribute="width" constant="40" id="Hw8-ju-jRx"/>
                                     <constraint firstAttribute="height" constant="40" id="eWp-Sl-UCT"/>
                                 </constraints>
-                                <state key="normal" image="search"/>
+                                <inset key="imageEdgeInsets" minX="-10" minY="-14" maxX="-10" maxY="-21"/>
+                                <state key="normal" image="searchphoto"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="20"/>
@@ -117,43 +120,55 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wUr-lj-wEd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.96460121870000004" green="0.96476620440000005" blue="0.96459084750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <navigationBar key="tableFooterView" contentMode="scaleToFill" id="nhC-7P-Wr9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <navigationItem title="Title" id="zW9-Ar-ujw">
+                                            <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="ci5-A2-wSW"/>
+                                        </navigationItem>
+                                    </items>
+                                </navigationBar>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUH-Bc-aX8">
-                                <rect key="frame" x="10" y="812" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.28228411078453064" green="0.42319267988204956" blue="0.71788722276687622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="aID-Nj-Ezs"/>
-                                    <constraint firstAttribute="width" constant="40" id="xx1-we-iAG"/>
-                                </constraints>
-                                <state key="normal" image="messenger"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-3O-SbP">
-                                <rect key="frame" x="60" y="812" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.2823488712310791" green="0.42304345965385437" blue="0.72164052724838257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="ZXx-SA-5Rx"/>
-                                    <constraint firstAttribute="height" constant="40" id="sOc-v4-HsE"/>
-                                </constraints>
-                                <state key="normal" image="camera2"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iF-Qb-QGm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdi-Yc-mNq">
                                 <rect key="frame" x="364" y="812" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.2823488712310791" green="0.42304345965385437" blue="0.72164052724838257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.28674978020000003" green="0.42694914340000001" blue="0.72902435060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="5wQ-0z-X0C"/>
-                                    <constraint firstAttribute="width" constant="40" id="9a2-x4-JHc"/>
+                                    <constraint firstAttribute="height" constant="40" id="DDv-YD-l6T"/>
+                                    <constraint firstAttribute="width" constant="40" id="nWk-Yb-hPv"/>
                                 </constraints>
-                                <state key="normal" image="search"/>
+                                <inset key="imageEdgeInsets" minX="-10" minY="-14" maxX="-10" maxY="-21"/>
+                                <state key="normal" image="searchphoto"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xng-Cv-roP">
+                                <rect key="frame" x="60" y="812" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.28242260219999998" green="0.41898903250000002" blue="0.71798861030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2nh-ax-U59"/>
+                                    <constraint firstAttribute="width" constant="40" id="amj-Un-fYz"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-12" minY="-9" maxX="-13" maxY="-16"/>
+                                <state key="normal" image="camera"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu5-Tz-Kft">
+                                <rect key="frame" x="10" y="812" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.28234887120000002" green="0.42304345970000001" blue="0.72164052720000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="X5j-33-hCq"/>
+                                    <constraint firstAttribute="width" constant="40" id="b7T-ME-VfN"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-10" minY="-6" maxX="-10" maxY="-12"/>
+                                <state key="normal" image="messenger-1"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="20"/>
@@ -163,16 +178,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96068006750000001" green="0.96084445709999999" blue="0.96066969629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xng-Cv-roP" firstAttribute="leading" secondItem="gu5-Tz-Kft" secondAttribute="trailing" constant="10" id="3bz-r4-Pma"/>
                             <constraint firstItem="wUr-lj-wEd" firstAttribute="top" secondItem="ifB-uJ-V17" secondAttribute="top" id="83J-Z3-7gs"/>
                             <constraint firstItem="ifB-uJ-V17" firstAttribute="bottom" secondItem="wUr-lj-wEd" secondAttribute="bottom" id="87K-jd-MOJ"/>
-                            <constraint firstItem="hUH-Bc-aX8" firstAttribute="leading" secondItem="ifB-uJ-V17" secondAttribute="leading" constant="10" id="9h2-ye-psL"/>
-                            <constraint firstItem="ifB-uJ-V17" firstAttribute="bottom" secondItem="2iF-Qb-QGm" secondAttribute="bottom" constant="10" id="CrZ-Jb-e5Q"/>
                             <constraint firstItem="wUr-lj-wEd" firstAttribute="leading" secondItem="ifB-uJ-V17" secondAttribute="leading" id="IFs-w6-92w"/>
-                            <constraint firstItem="ifB-uJ-V17" firstAttribute="bottom" secondItem="hUH-Bc-aX8" secondAttribute="bottom" constant="10" id="Lcz-gS-lS5"/>
-                            <constraint firstItem="yhL-3O-SbP" firstAttribute="leading" secondItem="hUH-Bc-aX8" secondAttribute="trailing" constant="10" id="Tor-hY-W9C"/>
+                            <constraint firstItem="xng-Cv-roP" firstAttribute="top" secondItem="gu5-Tz-Kft" secondAttribute="top" id="VIK-BV-Rjb"/>
                             <constraint firstItem="ifB-uJ-V17" firstAttribute="trailing" secondItem="wUr-lj-wEd" secondAttribute="trailing" id="XRa-Xo-nNr"/>
-                            <constraint firstItem="ifB-uJ-V17" firstAttribute="trailing" secondItem="2iF-Qb-QGm" secondAttribute="trailing" constant="10" id="cle-Rp-1TU"/>
-                            <constraint firstItem="ifB-uJ-V17" firstAttribute="bottom" secondItem="yhL-3O-SbP" secondAttribute="bottom" constant="10" id="hB8-iv-o84"/>
+                            <constraint firstItem="ifB-uJ-V17" firstAttribute="bottom" secondItem="zdi-Yc-mNq" secondAttribute="bottom" constant="10" id="hwN-b5-X52"/>
+                            <constraint firstItem="xng-Cv-roP" firstAttribute="bottom" secondItem="gu5-Tz-Kft" secondAttribute="bottom" id="ip8-JT-iUE"/>
+                            <constraint firstItem="ifB-uJ-V17" firstAttribute="bottom" secondItem="gu5-Tz-Kft" secondAttribute="bottom" constant="10" id="nmS-F2-pvq"/>
+                            <constraint firstItem="ifB-uJ-V17" firstAttribute="trailing" secondItem="zdi-Yc-mNq" secondAttribute="trailing" constant="10" id="wGx-mQ-4uE"/>
+                            <constraint firstItem="gu5-Tz-Kft" firstAttribute="leading" secondItem="ifB-uJ-V17" secondAttribute="leading" constant="10" id="z18-RA-NFC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ifB-uJ-V17"/>
                     </view>
@@ -275,13 +291,14 @@
     </scenes>
     <resources>
         <image name="bell" width="54" height="56"/>
-        <image name="camera2" width="56" height="55"/>
+        <image name="camera" width="56" height="55"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="home" width="56" height="57"/>
-        <image name="messenger" width="58" height="57"/>
+        <image name="messenger-1" width="58" height="57"/>
         <image name="option" width="58" height="54"/>
         <image name="people" width="57" height="54"/>
         <image name="radio" width="66" height="60"/>
-        <image name="search" width="50" height="50"/>
+        <image name="searchphoto" width="50" height="50"/>
     </resources>
     <color key="tintColor" red="0.62645412308310489" green="0.62645412308310489" blue="0.62645412308310489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

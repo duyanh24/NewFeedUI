@@ -16,10 +16,11 @@ class NewFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
+        setUpTableView()
+        title = "New Feeds"
     }
     
-    func setUp() {
+    private func setUpTableView() {
         statusTableView.register(UINib(nibName: "StatusCell", bundle: nil), forCellReuseIdentifier: "statusCell")
         statusTableView.register(UINib(nibName: "StatusCellWithoutImage", bundle: nil), forCellReuseIdentifier: "statusCellWithoutImage")
         statusTableView.dataSource = self

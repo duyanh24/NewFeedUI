@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "facebook-messenger-vector-logo-0.png",
+      "filename" : "searchphoto.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "facebook-messenger-vector-logo-0-2x.png",
+      "filename" : "search@2xphoto.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "search@3xphoto.png",
       "scale" : "3x"
     }
   ],

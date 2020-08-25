@@ -43,17 +43,17 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yvonne Knight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0f-hF-dwq">
                                 <rect key="frame" x="50" y="10" width="111" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.32463222742080688" green="0.32468372583389282" blue="0.32462096214294434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsp-hb-3hY">
                                 <rect key="frame" x="50" y="34" width="70" height="16"/>
-                                <color key="backgroundColor" red="0.87939038372287781" green="0.88836375498535614" blue="0.88836375498535614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91806226968765259" green="0.91819435358047485" blue="0.9180334210395813" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="D5q-pE-wrk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.61324257425742568" green="0.61324257425742568" blue="0.61324257425742568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.5875316858291626" green="0.58761876821517944" blue="0.5875125527381897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -79,9 +79,9 @@
                         <rect key="frame" x="10" y="60" width="341" height="500"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit orci condimentum turpis." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFc-XH-yXA">
-                                <rect key="frame" x="10" y="20" width="321" height="240"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="15" y="15" width="311" height="240"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.33733260631561279" green="0.33738583326339722" blue="0.33732098340988159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-ES-5bN">
@@ -161,16 +161,16 @@
                         <constraints>
                             <constraint firstItem="ixh-ES-5bN" firstAttribute="leading" secondItem="ipT-cG-nKk" secondAttribute="leading" id="33G-Ct-mjO"/>
                             <constraint firstAttribute="bottom" secondItem="bL1-Ri-GjB" secondAttribute="bottom" constant="5" id="3Uu-7I-uVJ"/>
-                            <constraint firstItem="RFc-XH-yXA" firstAttribute="leading" secondItem="ipT-cG-nKk" secondAttribute="leading" constant="10" id="3j3-mZ-KCf"/>
+                            <constraint firstItem="RFc-XH-yXA" firstAttribute="leading" secondItem="ipT-cG-nKk" secondAttribute="leading" constant="15" id="3j3-mZ-KCf"/>
                             <constraint firstItem="ssk-nx-I9a" firstAttribute="bottom" secondItem="ixh-ES-5bN" secondAttribute="bottom" id="6Lw-MF-JnX"/>
-                            <constraint firstAttribute="trailing" secondItem="RFc-XH-yXA" secondAttribute="trailing" constant="10" id="C05-8d-Skf"/>
+                            <constraint firstAttribute="trailing" secondItem="RFc-XH-yXA" secondAttribute="trailing" constant="15" id="C05-8d-Skf"/>
                             <constraint firstItem="ssk-nx-I9a" firstAttribute="top" secondItem="ixh-ES-5bN" secondAttribute="top" id="HMV-gb-llz"/>
                             <constraint firstItem="bL1-Ri-GjB" firstAttribute="leading" secondItem="ipT-cG-nKk" secondAttribute="leading" constant="10" id="PPQ-sS-Y7B"/>
-                            <constraint firstItem="RFc-XH-yXA" firstAttribute="top" secondItem="ipT-cG-nKk" secondAttribute="top" constant="20" id="Ucd-fC-mLn"/>
+                            <constraint firstItem="RFc-XH-yXA" firstAttribute="top" secondItem="ipT-cG-nKk" secondAttribute="top" constant="15" id="Ucd-fC-mLn"/>
                             <constraint firstItem="ssk-nx-I9a" firstAttribute="leading" secondItem="ixh-ES-5bN" secondAttribute="leading" id="hn9-O3-1eE"/>
                             <constraint firstAttribute="trailing" secondItem="bL1-Ri-GjB" secondAttribute="trailing" constant="10" id="i0e-wg-TgN"/>
                             <constraint firstAttribute="trailing" secondItem="ixh-ES-5bN" secondAttribute="trailing" id="iWG-c6-c83"/>
-                            <constraint firstItem="ixh-ES-5bN" firstAttribute="top" secondItem="RFc-XH-yXA" secondAttribute="bottom" constant="10" id="mME-0o-K0Y"/>
+                            <constraint firstItem="ixh-ES-5bN" firstAttribute="top" secondItem="RFc-XH-yXA" secondAttribute="bottom" constant="15" id="mME-0o-K0Y"/>
                             <constraint firstItem="ssk-nx-I9a" firstAttribute="trailing" secondItem="ixh-ES-5bN" secondAttribute="trailing" id="xrT-ZR-G7d"/>
                             <constraint firstAttribute="bottom" secondItem="ixh-ES-5bN" secondAttribute="bottom" id="zwq-dt-DTe"/>
                         </constraints>
@@ -199,7 +199,7 @@
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-13" minY="0.0" maxX="0.0" maxY="-3"/>
                                 <state key="normal" title="Comment" image="comment">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.63994073867797852" green="0.64003509283065796" blue="0.63992011547088623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXc-zw-bDm">
@@ -208,7 +208,7 @@
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-11" minY="0.0" maxX="0.0" maxY="-3"/>
                                 <state key="normal" title="Share" image="share">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.63994073867797852" green="0.64003509283065796" blue="0.63992011547088623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </subviews>
@@ -250,6 +250,7 @@
                 <outlet property="statusImageView" destination="ixh-ES-5bN" id="Pdt-zD-Q0N"/>
                 <outlet property="statusLabel" destination="RFc-XH-yXA" id="lJm-1l-b6W"/>
                 <outlet property="statusLabelContraintBottom" destination="mME-0o-K0Y" id="E1I-tY-Nle"/>
+                <outlet property="timeLabel" destination="qsp-hb-3hY" id="UHt-rg-NdW"/>
             </connections>
             <point key="canvasLocation" x="10.869565217391305" y="92.410714285714278"/>
         </tableViewCell>
