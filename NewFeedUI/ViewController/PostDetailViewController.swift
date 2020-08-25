@@ -32,7 +32,6 @@ class PostDetailViewController: UIViewController {
         postDetailTableView.register(UINib(nibName: "StatusCell", bundle: nil), forCellReuseIdentifier: "statusCell")
         postDetailTableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "commentCell")
         postDetailTableView.register(UINib(nibName: "ShowMoreCell", bundle: nil), forCellReuseIdentifier: "showMoreCell")
-        postDetailTableView.register(UINib(nibName: "StatusCellWithoutImage", bundle: nil), forCellReuseIdentifier: "statusCellWithoutImage")
         postDetailTableView.dataSource = self
         postDetailTableView.delegate = self
         postDetailTableView.contentInset.bottom = 50
@@ -53,15 +52,6 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
             
             guard let statusSelected = statusSelected else {
                 return UITableViewCell()
-            }
-            
-            if statusSelected.image == "" {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCellWithoutImage", for: indexPath) as? StatusCellWithoutImage else {
-                    return UITableViewCell()
-                }
-        
-                cell.setUpData(status: statusSelected)
-                return cell
             }
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell else {

@@ -22,7 +22,6 @@ class NewFeedViewController: UIViewController {
     
     private func setUpTableView() {
         statusTableView.register(UINib(nibName: "StatusCell", bundle: nil), forCellReuseIdentifier: "statusCell")
-        statusTableView.register(UINib(nibName: "StatusCellWithoutImage", bundle: nil), forCellReuseIdentifier: "statusCellWithoutImage")
         statusTableView.dataSource = self
         statusTableView.delegate = self
         statusTableView.contentInset.bottom = 50
@@ -36,15 +35,6 @@ extension NewFeedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if listStatus[indexPath.row].image == "" {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCellWithoutImage", for: indexPath) as? StatusCellWithoutImage else {
-                return UITableViewCell()
-            }
-            cell.setUpData(status: listStatus[indexPath.row])
-            
-            return cell
-        }
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell else {
             return UITableViewCell()

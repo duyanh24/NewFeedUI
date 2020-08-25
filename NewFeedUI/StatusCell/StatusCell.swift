@@ -15,9 +15,9 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusImageView: UIImageView!
-    @IBOutlet weak var gradientImageView: UIGradientImageView!
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerImageView: UIView!
     
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
@@ -27,10 +27,7 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var sadReactImage: UIImageView!
     @IBOutlet weak var angryReactImage: UIImageView!
     @IBOutlet weak var numberOfReactLabel: UILabel!
-    
-    @IBOutlet weak var statusLabelContraintBottom: NSLayoutConstraint!
-    @IBOutlet weak var bottomStackViewContraint: NSLayoutConstraint!
-    @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerImageStackView: UIStackView!
     
     var liked = false
     
@@ -47,7 +44,7 @@ class StatusCell: UITableViewCell {
         commentButton.layer.cornerRadius = commentButton.frame.size.height / 2
         shareButton.layer.cornerRadius = shareButton.frame.size.height / 2
         
-        containerView.layer.cornerRadius = 10
+        containerView.layer.cornerRadius = 30
         containerView.layer.masksToBounds = true
         containerView.dropShadow()
         
@@ -66,12 +63,14 @@ class StatusCell: UITableViewCell {
         statusLabel.text = status.content
         numberOfReactLabel.text = String(status.numberOfLike) + " - " + String(status.numberOfComment) + " Comment - " + String(status.numberOfShare) + " Share"
         
-//        if let image = UIImage(named: status.image) {
-//            let ratio = image.size.width / image.size.height
-//            let newHeight = containerView.frame.width / ratio
-//            heightImageConstraint.constant = newHeight
-//        }
-        statusImageView.image = UIImage(named: status.image)
+        if status.image != "" {
+            containerImageView.isHidden = false
+            statusImageView.image = UIImage(named: status.image)
+            numberOfReactLabel.textColor = UIColor.white
+        } else {
+            containerImageView.isHidden = true
+            numberOfReactLabel.textColor = UIColor.gray
+        }
         
         if status.liked {
             liked = true
