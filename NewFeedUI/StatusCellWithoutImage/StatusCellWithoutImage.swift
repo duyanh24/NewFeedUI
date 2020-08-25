@@ -48,7 +48,6 @@ class StatusCellWithoutImage: UITableViewCell {
     
     func setUpUI() {
         
-        
         avatarStatusImageView.layer.cornerRadius = avatarStatusImageView.frame.size.height / 2
         avatarStatusImageView.clipsToBounds = true
        

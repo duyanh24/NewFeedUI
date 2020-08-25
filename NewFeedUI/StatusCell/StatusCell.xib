@@ -34,20 +34,20 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="5gj-a9-WoG">
-                                <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                <rect key="frame" x="0.0" y="10" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="V94-4D-ggp"/>
                                     <constraint firstAttribute="width" constant="40" id="qwd-hq-vA8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yvonne Knight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0f-hF-dwq">
-                                <rect key="frame" x="60" y="10" width="111" height="20.5"/>
+                                <rect key="frame" x="50" y="10" width="111" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsp-hb-3hY">
-                                <rect key="frame" x="60" y="34" width="70" height="16"/>
+                                <rect key="frame" x="50" y="34" width="70" height="16"/>
                                 <color key="backgroundColor" red="0.87939038372287781" green="0.88836375498535614" blue="0.88836375498535614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="D5q-pE-wrk"/>
@@ -69,7 +69,7 @@
                             <constraint firstAttribute="height" constant="60" id="BCk-58-WgR"/>
                             <constraint firstAttribute="trailing" secondItem="OQb-I4-6FX" secondAttribute="trailing" constant="10" id="Eos-ii-znU"/>
                             <constraint firstItem="5gj-a9-WoG" firstAttribute="top" secondItem="Qc0-TG-gmw" secondAttribute="top" constant="10" id="HuN-sD-BJh"/>
-                            <constraint firstItem="5gj-a9-WoG" firstAttribute="leading" secondItem="Qc0-TG-gmw" secondAttribute="leading" constant="10" id="dgL-OL-tvD"/>
+                            <constraint firstItem="5gj-a9-WoG" firstAttribute="leading" secondItem="Qc0-TG-gmw" secondAttribute="leading" id="dgL-OL-tvD"/>
                             <constraint firstItem="qsp-hb-3hY" firstAttribute="bottom" secondItem="5gj-a9-WoG" secondAttribute="bottom" id="fHx-AF-Ehs"/>
                             <constraint firstItem="OQb-I4-6FX" firstAttribute="top" secondItem="Qc0-TG-gmw" secondAttribute="top" constant="10" id="ixW-mK-4dM"/>
                             <constraint firstItem="qsp-hb-3hY" firstAttribute="leading" secondItem="5gj-a9-WoG" secondAttribute="trailing" constant="10" id="k9m-S9-mjg"/>
