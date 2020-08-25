@@ -72,6 +72,11 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         cell.setUpData(comment: statusSelected.comments[indexPath.row])
+        
+        if indexPath.row == statusSelected.comments.count - 1 {
+            cell.setUpContraintLastCell()
+        }
+        
         return cell
     }
     

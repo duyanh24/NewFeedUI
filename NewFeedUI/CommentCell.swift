@@ -14,6 +14,7 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var containerCommentView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var bottomContraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +35,16 @@ class CommentCell: UITableViewCell {
         avatarCommentImage.image = UIImage(named: comment.avatar)
         nameLabel.text = comment.name
         commentLabel.text = comment.content
+    }
+    
+    func setUpContraintLastCell() {
+        bottomContraint.constant = 60
+    }
+    
+    override func prepareForReuse() {
+        if bottomContraint.constant == 60 {
+            bottomContraint.constant = 20
+        }
     }
 }
 

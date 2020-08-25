@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NewFeedViewController: UIViewController {
     
     @IBOutlet weak var statusTableView: UITableView!
     
@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "New Feeds"
         setUp()
     }
     
@@ -27,7 +26,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension NewFeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listStatus.count
@@ -38,6 +37,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         cell.setUpData(status: listStatus[indexPath.row])
+        
+        if indexPath.row == listStatus.count - 1 {
+            cell.setUpContraintLastCell()
+        }
         
         return cell
     }

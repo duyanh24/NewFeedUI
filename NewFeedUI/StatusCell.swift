@@ -16,7 +16,9 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var bottomStackViewContraint: NSLayoutConstraint!
     @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
@@ -29,7 +31,6 @@ class StatusCell: UITableViewCell {
     
     @IBOutlet weak var statusLabelContraintBottom: NSLayoutConstraint!
     var statusLabelWithoutImageContraintBottom: NSLayoutConstraint!
-    var statusLabelWithImageContraintBottom: NSLayoutConstraint!
     
     var liked = false
     
@@ -52,9 +53,7 @@ class StatusCell: UITableViewCell {
     }
     
     func setUpUI() {
-        statusLabelContraintBottom.isActive = false
         statusLabelWithoutImageContraintBottom = statusLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -30)
-        statusLabelWithImageContraintBottom = statusLabel.bottomAnchor.constraint(equalTo: statusImageView.topAnchor, constant: -10)
         
         avatarStatusImageView.layer.cornerRadius = avatarStatusImageView.frame.size.height / 2
         avatarStatusImageView.clipsToBounds = true
@@ -78,8 +77,10 @@ class StatusCell: UITableViewCell {
         statusLabel.text = status.content
         numberOfReactLabel.text = String(status.numberOfLike) + " - " + String(status.numberOfComment) + " Comment - " + String(status.numberOfShare) + " Share"
         
+        
         if status.image != "" {
             showImage()
+            
             if let image = UIImage(named: status.image) {
                 let ratio = image.size.width / image.size.height
                 let newHeight = containerView.frame.width / ratio
@@ -106,7 +107,6 @@ class StatusCell: UITableViewCell {
     func hideImage() {
         statusImageView.isHidden = true
         gradientImageView.isHidden = true
-        statusLabelWithImageContraintBottom.isActive = false
         statusLabelWithoutImageContraintBottom.isActive = true
         numberOfReactLabel.textColor = UIColor.gray
     }
@@ -114,12 +114,17 @@ class StatusCell: UITableViewCell {
     func showImage() {
         statusImageView.isHidden = false
         gradientImageView.isHidden = false
-        statusLabelWithImageContraintBottom.isActive = true
         statusLabelWithoutImageContraintBottom.isActive = false
         numberOfReactLabel.textColor = UIColor.white
     }
     
+    func setUpContraintLastCell() {
+        bottomStackViewContraint.constant = 60
+    }
+    
     override func prepareForReuse() {
-
+        if bottomStackViewContraint.constant == 60 {
+            bottomStackViewContraint.constant = 15
+        }
     }
 }
