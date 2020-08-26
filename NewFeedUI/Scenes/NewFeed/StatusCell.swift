@@ -31,7 +31,6 @@ class StatusCell: UITableViewCell {
     
     @IBOutlet weak var spaceView: UIView!
     
-    
     var statusItem = Status(name: "", image: "", avatar: "", content: "", liked: true, numberOfLike: 0, numberOfComment: 0, numberOfShare: 0, comments: [])
     
     override func awakeFromNib() {
@@ -68,6 +67,12 @@ class StatusCell: UITableViewCell {
         likeButton.dropShadow()
         commentButton.dropShadow()
         shareButton.dropShadow()
+        
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        likeButton.titleLabel?.font =  UIFont(name: "Roboto-Medium", size: 18 * screenWidth / 375)
+        commentButton.titleLabel?.font =  UIFont(name: "Roboto-Medium", size: 18 * screenWidth / 375)
+        shareButton.titleLabel?.font =  UIFont(name: "Roboto-Medium", size: 18 * screenWidth / 375)
     }
     
     func setUpData(status: Status) {

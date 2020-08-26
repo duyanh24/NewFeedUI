@@ -65,4 +65,7 @@ extension NewFeedViewController: UITableViewDataSource, UITableViewDelegate {
         postDetailViewController.statusSelected = listStatus[indexPath.row]
         navigationController?.pushViewController(postDetailViewController, animated: true)
     }
+    
+    
+    
 }
