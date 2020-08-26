@@ -47,71 +47,41 @@ class Status {
     }
     
     static func setData() -> [Status] {
-        let listComment: [Comment] = [
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-            Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                    name: listName[Int.random(in: 0...listName.count - 1)],
-                    content: listContent[Int.random(in: 0...listContent.count - 1)]),
-        ]
+        let emptyStatus = getStatus()
         
-        var listStatus: [Status] = [
-            Status(name: listName[Int.random(in: 0...listName.count - 1)],
-            image: listImg[Int.random(in: 0...listImg.count - 1)],
-            avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-            content: listContent[Int.random(in: 0...listContent.count - 1)],
-            liked: listBool[Int.random(in: 0...listBool.count - 1)],
-            numberOfLike: Int.random(in: 1...10),
-            numberOfComment: Int.random(in: 1...10),
-            numberOfShare: Int.random(in: 1...10),
-            comments: listComment)
-        ]
+        let listStatusEmpty = [Status](repeating: emptyStatus, count: 20);
         
-        for _ in 0...20 {
-            let status = Status(name: listName[Int.random(in: 0...listName.count - 1)],
-                                image: listImg[Int.random(in: 0...listImg.count - 1)],
-                                avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
-                                content: listContent[Int.random(in: 0...listContent.count - 1)],
-                                liked: listBool[Int.random(in: 0...listBool.count - 1)],
-                                numberOfLike: Int.random(in: 1...10),
-                                numberOfComment: Int.random(in: 1...10),
-                                numberOfShare: Int.random(in: 1...10),
-                                comments: listComment)
-            listStatus.append(status)
+        let listStatus = listStatusEmpty.map { status -> Status in
+            return getStatus()
         }
-        
         return listStatus
+    }
+    
+    private static func getStatus() -> Status {
+        return Status(name: listName[Int.random(in: 0...listName.count - 1)],
+                    image: listImg[Int.random(in: 0...listImg.count - 1)],
+                    avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                    content: listContent[Int.random(in: 0...listContent.count - 1)],
+                    liked: listBool[Int.random(in: 0...listBool.count - 1)],
+                    numberOfLike: Int.random(in: 1...10),
+                    numberOfComment: Int.random(in: 1...10),
+                    numberOfShare: Int.random(in: 1...10),
+                    comments: getListComment())
+    }
+    
+    private static func getListComment() -> [Comment] {
+        let emptyComment = getComment()
+        let arrEmptyComment = [Comment](repeating: emptyComment, count: 20);
+        let listComment = arrEmptyComment.map { comment -> Comment in
+            return getComment()
+        }
+        return listComment
+    }
+    
+    private static func getComment() -> Comment {
+        return Comment(avatar: listAvatar[Int.random(in: 0...listAvatar.count - 1)],
+                       name: listName[Int.random(in: 0...listName.count - 1)],
+                       content: listContent[Int.random(in: 0...listContent.count - 1)])
     }
 }
 

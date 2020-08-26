@@ -19,7 +19,8 @@ class PostDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-
+        navigationController?.navigationBar.topItem?.title = "New Feeds"
+        navigationController?.navigationBar.tintColor = .gray
     }
     
     private func setUpTableView() {

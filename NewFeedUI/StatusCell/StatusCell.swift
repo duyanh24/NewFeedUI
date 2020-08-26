@@ -29,7 +29,10 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var numberOfReactLabel: UILabel!
     @IBOutlet weak var containerImageStackView: UIStackView!
     
-    var liked = false
+    @IBOutlet weak var spaceView: UIView!
+    
+    
+    var statusItem = Status(name: "", image: "", avatar: "", content: "", liked: true, numberOfLike: 0, numberOfComment: 0, numberOfShare: 0, comments: [])
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,13 +43,23 @@ class StatusCell: UITableViewCell {
         avatarStatusImageView.layer.cornerRadius = avatarStatusImageView.frame.size.height / 2
         avatarStatusImageView.clipsToBounds = true
         
+        timeLabel.layer.cornerRadius = timeLabel.frame.size.height / 2
+        
         likeButton.layer.cornerRadius = likeButton.frame.size.height / 2
         commentButton.layer.cornerRadius = commentButton.frame.size.height / 2
         shareButton.layer.cornerRadius = shareButton.frame.size.height / 2
         
-        containerView.layer.cornerRadius = 30
-        containerView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 5
+        //containerView.layer.masksToBounds = true
         containerView.dropShadow()
+        
+        containerImageView.layer.cornerRadius = 5
+        containerImageView.clipsToBounds = true
+        containerImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        
+        spaceView.layer.cornerRadius = 5
+        spaceView.clipsToBounds = true
+        spaceView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
         funReactImage.dropShadow()
         sadReactImage.dropShadow()
@@ -58,6 +71,7 @@ class StatusCell: UITableViewCell {
     }
     
     func setUpData(status: Status) {
+        statusItem = status
         nameLabel.text = status.name
         avatarStatusImageView.image = UIImage(named: status.avatar)
         statusLabel.text = status.content
@@ -65,15 +79,17 @@ class StatusCell: UITableViewCell {
         
         if status.image != "" {
             containerImageView.isHidden = false
+            spaceView.isHidden = true
             statusImageView.image = UIImage(named: status.image)
             numberOfReactLabel.textColor = UIColor.white
         } else {
+            spaceView.isHidden = false
             containerImageView.isHidden = true
             numberOfReactLabel.textColor = UIColor.gray
+            
         }
         
         if status.liked {
-            liked = true
             likeButton.backgroundColor = UIColor(red: 66/255.0, green: 103/255.0, blue: 178/255.0, alpha: 1.0)
             likeButton.setTitleColor(UIColor.white, for: .normal)
             likeButton.setImage(UIImage(named: "like contour"), for: .normal)
@@ -85,16 +101,21 @@ class StatusCell: UITableViewCell {
     }
     
     @IBAction func likeButtonClick(_ sender: Any) {
-        if liked == true {
-            liked = false
+        let parenTableView = self.superview as! UITableView
+        
+        if statusItem.liked == true {
+            statusItem.liked = false
+            statusItem.numberOfLike -= 1
             likeButton.backgroundColor = UIColor.white
             likeButton.setTitleColor(UIColor.gray, for: .normal)
             likeButton.setImage(UIImage(named: "dislike"), for: .normal)
         } else {
-            liked = true
+            statusItem.liked = true
+            statusItem.numberOfLike += 1
             likeButton.backgroundColor = UIColor(red: 66/255.0, green: 103/255.0, blue: 178/255.0, alpha: 1.0)
             likeButton.setTitleColor(UIColor.white, for: .normal)
             likeButton.setImage(UIImage(named: "like contour"), for: .normal)
         }
+        parenTableView.reloadData()
     }
 }

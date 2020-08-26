@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dyn-yh-07e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dyn-yh-07e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,17 +28,17 @@
             <objects>
                 <viewController id="UcW-aF-xXa" customClass="NewFeedViewController" customModule="NewFeedUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ueb-7m-03V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pa7-bH-FO7">
-                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="676"/>
                                 <color key="backgroundColor" red="0.96939128637313843" green="0.96953040361404419" blue="0.96936088800430298" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="10" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.93180817365646362" green="0.93194204568862915" blue="0.93177884817123413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDz-aX-Ecw">
-                                <rect key="frame" x="10" y="714" width="40" height="40"/>
+                                <rect key="frame" x="10" y="626" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.2823488712310791" green="0.42304345965385437" blue="0.72164052724838257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="3hC-Kw-kHK"/>
@@ -53,7 +53,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0x8-jT-xNx">
-                                <rect key="frame" x="60" y="714" width="40" height="40"/>
+                                <rect key="frame" x="60" y="626" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.28242260217666626" green="0.41898903250694275" blue="0.71798861026763916" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1r2-e2-lvP"/>
@@ -68,7 +68,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sc9-Ft-gpt">
-                                <rect key="frame" x="364" y="714" width="40" height="40"/>
+                                <rect key="frame" x="364" y="626" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.28674978017807007" green="0.426949143409729" blue="0.72902435064315796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Hw8-ju-jRx"/>
@@ -83,7 +83,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.44869251943005184" green="0.44869251943005184" blue="0.44869251943005184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="I4L-29-0Zu" firstAttribute="bottom" secondItem="TDz-aX-Ecw" secondAttribute="bottom" constant="10" id="GET-4f-nl6"/>
                             <constraint firstItem="I4L-29-0Zu" firstAttribute="bottom" secondItem="Pa7-bH-FO7" secondAttribute="bottom" id="HCP-yp-pFI"/>
@@ -199,6 +199,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.29537659883499146" green="0.43891251087188721" blue="0.74364477396011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="tZ3-gy-5nh" kind="relationship" relationship="viewControllers" id="sXG-QK-3SA"/>
@@ -218,7 +220,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tZ3-gy-5nh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="home" id="PZF-3m-lfS"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eXd-qg-KRK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="eXd-qg-KRK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -280,7 +282,6 @@
             <point key="canvasLocation" x="1700" y="572"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.62645412308310489" green="0.62645412308310489" blue="0.62645412308310489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="bell" width="54" height="56"/>
         <image name="camera" width="56" height="55"/>
@@ -291,4 +292,5 @@
         <image name="radio" width="66" height="60"/>
         <image name="searchphoto" width="50" height="50"/>
     </resources>
+    <color key="tintColor" red="0.62645412308310489" green="0.62645412308310489" blue="0.62645412308310489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

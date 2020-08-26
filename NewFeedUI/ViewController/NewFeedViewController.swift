@@ -12,12 +12,22 @@ class NewFeedViewController: UIViewController {
     
     @IBOutlet weak var statusTableView: UITableView!
     
-    var listStatus = Status.setData()
+    private var listStatus = Status.setData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-        title = "New Feeds"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        statusTableView.reloadData()
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     private func setUpTableView() {

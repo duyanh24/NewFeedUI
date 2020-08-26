@@ -156,8 +156,8 @@
 			children = (
 				C723D09724EF6B8300A954C7 /* AppDelegate.swift */,
 				C723D09924EF6B8300A954C7 /* SceneDelegate.swift */,
-				08FDFC0424F4CB7700810894 /* ViewController */,
 				08FDFC0324F4CB6400810894 /* Model */,
+				08FDFC0424F4CB7700810894 /* ViewController */,
 				08FDFC0224F4CB4B00810894 /* CommentCell */,
 				08FDFC0024F4CAF600810894 /* StatusCell */,
 				C723D09D24EF6B8300A954C7 /* Main.storyboard */,
