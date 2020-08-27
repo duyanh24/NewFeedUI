@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol StatusCellDelegate {
+protocol StatusCellDelegate: AnyObject {
     func didLikeItem()
 }
 
 class StatusCell: UITableViewCell {
-
+    
     @IBOutlet weak var avatarStatusImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -37,7 +37,7 @@ class StatusCell: UITableViewCell {
     
     private var statusItem: Status!
     
-    var buttonClick: StatusCellDelegate?
+    weak var delegate: StatusCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -125,6 +125,6 @@ class StatusCell: UITableViewCell {
             likeButton.setTitleColor(UIColor.white, for: .normal)
             likeButton.setImage(UIImage(named: "like contour"), for: .normal)
         }
-        buttonClick?.didLikeItem()
+        delegate?.didLikeItem()
     }
 }
