@@ -19,18 +19,25 @@ class PostDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpData()
+        setUpNavigationBar()
         setUpTableView()
-        navigationController?.navigationBar.topItem?.title = "New Feeds"
-        navigationController?.navigationBar.tintColor = .gray
     }
     
-    private func setUpTableView() {
+    private func setUpData() {
         guard let statusSelected = statusSelected else {
             return
         }
         title = statusSelected.name
         numberOfComment = statusSelected.comments.count
-        
+    }
+    
+    private func setUpNavigationBar() {
+        navigationController?.navigationBar.topItem?.title = "New Feeds"
+        navigationController?.navigationBar.tintColor = .gray
+    }
+    
+    private func setUpTableView() {
         postDetailTableView.register(UINib(nibName: "StatusCell", bundle: nil), forCellReuseIdentifier: "statusCell")
         postDetailTableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "commentCell")
         postDetailTableView.dataSource = self

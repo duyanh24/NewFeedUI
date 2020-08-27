@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewFeedViewController: UIViewController {
+class NewFeedViewController: UIViewController, ButtonClick {
     
     @IBOutlet weak var statusTableView: UITableView!
     
@@ -36,6 +36,10 @@ class NewFeedViewController: UIViewController {
         statusTableView.delegate = self
         statusTableView.contentInset.bottom = 50
     }
+    
+    func onClick() {
+        statusTableView.reloadData()
+    }
 }
 
 extension NewFeedViewController: UITableViewDataSource, UITableViewDelegate {
@@ -49,8 +53,8 @@ extension NewFeedViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as? StatusCell else {
             return UITableViewCell()
         }
+        cell.buttonClick = self
         cell.setUpData(status: listStatus[indexPath.row])
-        
         return cell
     }
     
@@ -65,7 +69,4 @@ extension NewFeedViewController: UITableViewDataSource, UITableViewDelegate {
         postDetailViewController.statusSelected = listStatus[indexPath.row]
         navigationController?.pushViewController(postDetailViewController, animated: true)
     }
-    
-    
-    
 }

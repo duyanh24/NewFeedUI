@@ -9,7 +9,6 @@
 import Foundation
 
 class Status {
-    
     var name: String
     var image: String
     var avatar: String
