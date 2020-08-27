@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol StatusCellDelegate {
+    func didLikeItem()
+}
+
 class StatusCell: UITableViewCell {
 
     @IBOutlet weak var avatarStatusImageView: UIImageView!
@@ -31,9 +35,9 @@ class StatusCell: UITableViewCell {
     
     @IBOutlet weak var spaceView: UIView!
     
-    private var statusItem = Status(name: "", image: "", avatar: "", content: "", liked: true, numberOfLike: 0, numberOfComment: 0, numberOfShare: 0, comments: [])
+    private var statusItem: Status!
     
-    var buttonClick: ButtonClick?
+    var buttonClick: StatusCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -108,7 +112,7 @@ class StatusCell: UITableViewCell {
     }
     
     @IBAction func likeButtonClick(_ sender: Any) {
-        if statusItem.liked == true {
+        if statusItem?.liked == true {
             statusItem.liked = false
             statusItem.numberOfLike -= 1
             likeButton.backgroundColor = UIColor.white
@@ -121,6 +125,6 @@ class StatusCell: UITableViewCell {
             likeButton.setTitleColor(UIColor.white, for: .normal)
             likeButton.setImage(UIImage(named: "like contour"), for: .normal)
         }
-        buttonClick?.onClick()
+        buttonClick?.didLikeItem()
     }
 }

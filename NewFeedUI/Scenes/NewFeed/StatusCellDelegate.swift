@@ -8,6 +8,4 @@
 
 import Foundation
 
-protocol ButtonClick {
-    func onClick()
-}
+

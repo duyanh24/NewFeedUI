@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0854957A24F7468400152E0E /* ButtonClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0854957924F7468400152E0E /* ButtonClick.swift */; };
+		0854957A24F7468400152E0E /* StatusCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0854957924F7468400152E0E /* StatusCellDelegate.swift */; };
 		08A4D58F24F64B3B00C477AB /* UIViewExtendsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4D58E24F64B3B00C477AB /* UIViewExtendsion.swift */; };
 		08A4D59324F64BD500C477AB /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4D59224F64BD500C477AB /* FakeData.swift */; };
 		08A4D59524F64C2C00C477AB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4D59424F64C2C00C477AB /* Comment.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0854957924F7468400152E0E /* ButtonClick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonClick.swift; sourceTree = "<group>"; };
+		0854957924F7468400152E0E /* StatusCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCellDelegate.swift; sourceTree = "<group>"; };
 		08A4D58E24F64B3B00C477AB /* UIViewExtendsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtendsion.swift; path = ../../../../../UIViewExtendsion.swift; sourceTree = "<group>"; };
 		08A4D59224F64BD500C477AB /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FakeData.swift; path = ../../../../../../FakeData.swift; sourceTree = "<group>"; };
 		08A4D59424F64C2C00C477AB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = ../../../../../../Comment.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				C723D09B24EF6B8300A954C7 /* NewFeedViewController.swift */,
 				C723D0D124EF9C2400A954C7 /* StatusCell.swift */,
 				C723D0D224EF9C2400A954C7 /* StatusCell.xib */,
-				0854957924F7468400152E0E /* ButtonClick.swift */,
+				0854957924F7468400152E0E /* StatusCellDelegate.swift */,
 			);
 			path = NewFeed;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 				08A4D59524F64C2C00C477AB /* Comment.swift in Sources */,
 				18EC72E424F3A28C00106DD9 /* Status.swift in Sources */,
 				18283CF524F253F400A81068 /* UIGradientImageView.swift in Sources */,
-				0854957A24F7468400152E0E /* ButtonClick.swift in Sources */,
+				0854957A24F7468400152E0E /* StatusCellDelegate.swift in Sources */,
 				08A4D59324F64BD500C477AB /* FakeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
