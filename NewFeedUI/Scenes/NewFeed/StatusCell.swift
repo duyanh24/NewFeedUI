@@ -8,8 +8,12 @@
 
 import UIKit
 
-class StatusCell: UITableViewCell {
+protocol StatusCellDelegate: AnyObject {
+    func didLikeItem()
+}
 
+class StatusCell: UITableViewCell {
+    
     @IBOutlet weak var avatarStatusImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -31,8 +35,9 @@ class StatusCell: UITableViewCell {
     
     @IBOutlet weak var spaceView: UIView!
     
+    private var statusItem: Status!
     
-    var statusItem = Status(name: "", image: "", avatar: "", content: "", liked: true, numberOfLike: 0, numberOfComment: 0, numberOfShare: 0, comments: [])
+    weak var delegate: StatusCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -68,6 +73,12 @@ class StatusCell: UITableViewCell {
         likeButton.dropShadow()
         commentButton.dropShadow()
         shareButton.dropShadow()
+        
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        likeButton.titleLabel?.font =  UIFont(name: "Roboto-Medium", size: 18 * screenWidth / 375)
+        commentButton.titleLabel?.font =  UIFont(name: "Roboto-Medium", size: 18 * screenWidth / 375)
+        shareButton.titleLabel?.font =  UIFont(name: "Roboto-Medium", size: 18 * screenWidth / 375)
     }
     
     func setUpData(status: Status) {
@@ -101,9 +112,7 @@ class StatusCell: UITableViewCell {
     }
     
     @IBAction func likeButtonClick(_ sender: Any) {
-        let parenTableView = self.superview as! UITableView
-        
-        if statusItem.liked == true {
+        if statusItem?.liked == true {
             statusItem.liked = false
             statusItem.numberOfLike -= 1
             likeButton.backgroundColor = UIColor.white
@@ -116,6 +125,6 @@ class StatusCell: UITableViewCell {
             likeButton.setTitleColor(UIColor.white, for: .normal)
             likeButton.setImage(UIImage(named: "like contour"), for: .normal)
         }
-        parenTableView.reloadData()
+        delegate?.didLikeItem()
     }
 }
